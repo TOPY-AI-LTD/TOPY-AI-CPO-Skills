@@ -1,0 +1,20 @@
+{
+	"name": "topy-ai-cpo",
+	"version": "0.1.0",
+	"description": "TOPY AI CPO core: connects the TOPY CPO MCP server and keeps what to build decided, measured and reviewed week by week — Connect the AI CPO, Daily product watch, The CPO's goals, Weekly product review.",
+	"author": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai",
+		"url": "https://topy.ai"
+	},
+	"homepage": "https://topy.ai/developers",
+	"repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-CPO-Skills",
+	"license": "MIT",
+	"keywords": [
+		"topy.ai",
+		"ai-cpo",
+		"product",
+		"core"
+	],
+	"privacyPolicyUrl": "https://topy.ai/privacy"
+}

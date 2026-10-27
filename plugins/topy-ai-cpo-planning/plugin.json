@@ -1,0 +1,37 @@
+{
+	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+	"name": "topy-ai-cpo-planning",
+	"version": "0.1.0",
+	"description": "TOPY AI CPO Planning & specs skills (4): Build or not, Write a PRD, RICE prioritisation, Roadmap: now, next, later. Add the topy-ai-cpo plugin too, for the core skills and the CPO MCP server.",
+	"author": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai",
+		"url": "https://topy.ai"
+	},
+	"homepage": "https://topy.ai/developers",
+	"repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-CPO-Skills",
+	"license": "MIT",
+	"keywords": [
+		"topy.ai",
+		"ai-cpo",
+		"product",
+		"planning"
+	],
+	"extensions": {
+		"com.openai": {
+			"interface": {
+				"displayName": "TOPY.AI CPO Planning & specs",
+				"shortDescription": "TOPY AI CPO Planning & specs skills (4): Build or not, Write a PRD, RICE prioritisation, Roadmap: now, next, later. Add ",
+				"longDescription": "TOPY AI CPO Planning & specs skills (4): Build or not, Write a PRD, RICE prioritisation, Roadmap: now, next, later. Add the topy-ai-cpo plugin too, for the core skills and the CPO MCP server.",
+				"capabilities": [
+					"Read"
+				],
+				"category": "Productivity",
+				"brandColor": "#FF1212",
+				"privacyPolicyURL": "https://topy.ai/privacy",
+				"websiteURL": "https://topy.ai",
+				"developerName": "TOPY AI LTD"
+			}
+		}
+	}
+}

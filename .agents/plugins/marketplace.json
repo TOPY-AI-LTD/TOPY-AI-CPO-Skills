@@ -1,0 +1,80 @@
+{
+	"name": "topy-ai-cpo",
+	"interface": {
+		"displayName": "TOPY.AI AI CPO skills"
+	},
+	"plugins": [
+		{
+			"name": "topy-ai-cpo",
+			"source": {
+				"source": "local",
+				"path": "./plugins/topy-ai-cpo"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "ON_INSTALL"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "topy-ai-cpo-feedback",
+			"source": {
+				"source": "local",
+				"path": "./plugins/topy-ai-cpo-feedback"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "NONE"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "topy-ai-cpo-discovery",
+			"source": {
+				"source": "local",
+				"path": "./plugins/topy-ai-cpo-discovery"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "NONE"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "topy-ai-cpo-planning",
+			"source": {
+				"source": "local",
+				"path": "./plugins/topy-ai-cpo-planning"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "NONE"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "topy-ai-cpo-experiments",
+			"source": {
+				"source": "local",
+				"path": "./plugins/topy-ai-cpo-experiments"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "NONE"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "topy-ai-cpo-decisions",
+			"source": {
+				"source": "local",
+				"path": "./plugins/topy-ai-cpo-decisions"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "NONE"
+			},
+			"category": "Productivity"
+		}
+	]
+}

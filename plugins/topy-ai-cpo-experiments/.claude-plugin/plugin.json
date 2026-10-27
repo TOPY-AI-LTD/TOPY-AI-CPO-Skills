@@ -1,0 +1,20 @@
+{
+	"name": "topy-ai-cpo-experiments",
+	"version": "0.1.0",
+	"description": "TOPY AI CPO Experiments & launches skills (3): Plan and start an experiment, Read an experiment honestly, Instrument and ship behind a flag. Add the topy-ai-cpo plugin too, for the core skills and the CPO MCP server.",
+	"author": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai",
+		"url": "https://topy.ai"
+	},
+	"homepage": "https://topy.ai/developers",
+	"repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-CPO-Skills",
+	"license": "MIT",
+	"keywords": [
+		"topy.ai",
+		"ai-cpo",
+		"product",
+		"experiments"
+	],
+	"privacyPolicyUrl": "https://topy.ai/privacy"
+}

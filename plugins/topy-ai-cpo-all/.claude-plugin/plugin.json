@@ -1,0 +1,27 @@
+{
+	"name": "topy-ai-cpo-all",
+	"version": "0.1.0",
+	"description": "All 19 TOPY AI CPO skills in one install: AI CPO core (MCP), Feedback, Discovery & positioning, Planning & specs, Experiments & launches, Decisions.",
+	"author": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai",
+		"url": "https://topy.ai"
+	},
+	"homepage": "https://topy.ai/developers",
+	"repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-CPO-Skills",
+	"license": "MIT",
+	"keywords": [
+		"topy.ai",
+		"ai-cpo",
+		"bundle"
+	],
+	"privacyPolicyUrl": "https://topy.ai/privacy",
+	"dependencies": [
+		"topy-ai-cpo",
+		"topy-ai-cpo-feedback",
+		"topy-ai-cpo-discovery",
+		"topy-ai-cpo-planning",
+		"topy-ai-cpo-experiments",
+		"topy-ai-cpo-decisions"
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+	"name": "topy-ai-cpo-experiments",
+	"version": "0.1.0",
+	"description": "TOPY AI CPO Experiments & launches skills (3): Plan and start an experiment, Read an experiment honestly, Instrument and ship behind a flag. Add the topy-ai-cpo plugin too, for the core skills and the CPO MCP server.",
+	"author": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai",
+		"url": "https://topy.ai"
+	},
+	"homepage": "https://topy.ai/developers",
+	"repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-CPO-Skills",
+	"license": "MIT",
+	"keywords": [
+		"topy.ai",
+		"ai-cpo",
+		"product",
+		"experiments"
+	],
+	"extensions": {
+		"com.openai": {
+			"interface": {
+				"displayName": "TOPY.AI CPO Experiments & launches",
+				"shortDescription": "TOPY AI CPO Experiments & launches skills (3): Plan and start an experiment, Read an experiment honestly, Instrument and",
+				"longDescription": "TOPY AI CPO Experiments & launches skills (3): Plan and start an experiment, Read an experiment honestly, Instrument and ship behind a flag. Add the topy-ai-cpo plugin too, for the core skills and the CPO MCP server.",
+				"capabilities": [
+					"Read"
+				],
+				"category": "Productivity",
+				"brandColor": "#FF1212",
+				"privacyPolicyURL": "https://topy.ai/privacy",
+				"websiteURL": "https://topy.ai",
+				"developerName": "TOPY AI LTD"
+			}
+		}
+	}
+}

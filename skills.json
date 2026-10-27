@@ -1,0 +1,433 @@
+{
+	"name": "TOPY.AI AI CPO skills",
+	"description": "AI CPO skills for founders, built for TOPY.AI: a chief product officer that decides what to build and proves it worked — feedback triaged with clear accept/reject rules, de-identified user research, a PMF survey, RICE priorities, a now/next/later roadmap, PRDs with a success metric, a build-or-not check before the AI CTO, pre-registered experiments read without peeking, and a decision log with falsifiers — on the TOPY CPO MCP server (https://topy.ai/mcp/cpo); standalone skills are product methods that work anywhere.",
+	"version": "0.1.0",
+	"updated": "2026-10-27",
+	"publisher": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai",
+		"url": "https://topy.ai"
+	},
+	"install": {
+		"claude_code": "/plugin marketplace add TOPY-AI-LTD/TOPY-AI-CPO-Skills",
+		"npm": "npx @topy-ai/cpo-skills install",
+		"mcp_server": "https://topy.ai/mcp/cpo"
+	},
+	"tiers": {
+		"core": "Runs on the TOPY MCP server; needs a TOPY account.",
+		"connected": "Uses TOPY data and actions when the MCP server is connected; works on its own otherwise.",
+		"standalone": "A product method that works with any agent; can use TOPY where it fits."
+	},
+	"categories": [
+		{
+			"id": "core",
+			"name": "AI CPO core (MCP)",
+			"plugin": "topy-ai-cpo",
+			"count": 4
+		},
+		{
+			"id": "feedback",
+			"name": "Feedback",
+			"plugin": "topy-ai-cpo-feedback",
+			"count": 3
+		},
+		{
+			"id": "discovery",
+			"name": "Discovery & positioning",
+			"plugin": "topy-ai-cpo-discovery",
+			"count": 3
+		},
+		{
+			"id": "planning",
+			"name": "Planning & specs",
+			"plugin": "topy-ai-cpo-planning",
+			"count": 4
+		},
+		{
+			"id": "experiments",
+			"name": "Experiments & launches",
+			"plugin": "topy-ai-cpo-experiments",
+			"count": 3
+		},
+		{
+			"id": "decisions",
+			"name": "Decisions",
+			"plugin": "topy-ai-cpo-decisions",
+			"count": 2
+		}
+	],
+	"skills": [
+		{
+			"id": "topy-cpo-connect",
+			"name": "Connect the AI CPO",
+			"category": "core",
+			"category_name": "AI CPO core (MCP)",
+			"plugin": "topy-ai-cpo",
+			"tier": "core",
+			"summary": "Connect the TOPY CPO MCP server and check what it can see: the product review, the feedback queue, experiments and the decision log.",
+			"mcp_tools": [
+				"account_get",
+				"cpo_review",
+				"cpo_feedback_list",
+				"cpo_experiments",
+				"cpo_decisions",
+				"dashboard_link"
+			],
+			"pairs_with": [
+				"topy-cpo-goals",
+				"topy-cpo-weekly-review"
+			],
+			"path": "plugins/topy-ai-cpo/skills/topy-cpo-connect/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-daily-watch",
+			"name": "Daily product watch",
+			"category": "core",
+			"category_name": "AI CPO core (MCP)",
+			"plugin": "topy-ai-cpo",
+			"tier": "core",
+			"summary": "Weekdays: new feedback to triage, experiments due for a read-out and decisions due for revisit — a note to the Founder only when something needs attention.",
+			"mcp_tools": [
+				"cpo_feedback_list",
+				"cpo_experiments",
+				"cpo_decisions",
+				"cpo_report_send"
+			],
+			"pairs_with": [
+				"topy-cpo-feedback-triage",
+				"topy-cpo-experiment-read",
+				"topy-cpo-decision-revisit",
+				"topy-cpo-weekly-review"
+			],
+			"path": "plugins/topy-ai-cpo/skills/topy-cpo-daily-watch/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-goals",
+			"name": "The CPO's goals",
+			"category": "core",
+			"category_name": "AI CPO core (MCP)",
+			"plugin": "topy-ai-cpo",
+			"tier": "core",
+			"summary": "The AI CPO's standing goals and its status report for the CEO: activation, weekly active users and the PMF score, each with source and date or 'no data'.",
+			"mcp_tools": [
+				"cpo_status_report",
+				"cpo_review"
+			],
+			"pairs_with": [
+				"topy-cpo-weekly-review",
+				"topy-cpo-pmf-survey"
+			],
+			"path": "plugins/topy-ai-cpo/skills/topy-cpo-goals/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-weekly-review",
+			"name": "Weekly product review",
+			"category": "core",
+			"category_name": "AI CPO core (MCP)",
+			"plugin": "topy-ai-cpo",
+			"tier": "core",
+			"summary": "Every Tuesday: usage, the feedback queue by theme, experiments due for a read-out and decisions due for revisit, with at most three actions — for the Founder and the CEO.",
+			"mcp_tools": [
+				"cpo_review",
+				"cpo_feedback_list",
+				"cpo_experiments",
+				"cpo_decisions",
+				"cpo_report_send"
+			],
+			"pairs_with": [
+				"topy-cpo-goals",
+				"topy-cpo-feedback-triage",
+				"topy-cpo-experiment-read",
+				"topy-cpo-decision-revisit"
+			],
+			"path": "plugins/topy-ai-cpo/skills/topy-cpo-weekly-review/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-feedback-capture",
+			"name": "Capture feedback",
+			"category": "feedback",
+			"category_name": "Feedback",
+			"plugin": "topy-ai-cpo-feedback",
+			"tier": "connected",
+			"summary": "Record a piece of user feedback — a bug, an idea, praise or a question — with where it came from, de-identified, so triage can act on it.",
+			"mcp_tools": [
+				"cpo_feedback_add",
+				"cpo_feedback_list"
+			],
+			"pairs_with": [
+				"topy-cpo-feedback-triage",
+				"topy-cpo-user-research"
+			],
+			"path": "plugins/topy-ai-cpo-feedback/skills/topy-cpo-feedback-capture/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-feedback-reply",
+			"name": "Close the loop",
+			"category": "feedback",
+			"category_name": "Feedback",
+			"plugin": "topy-ai-cpo-feedback",
+			"tier": "connected",
+			"summary": "Draft the reply each sender is owed — fixed, coming, not planned and why, or one precise question — in plain words and their language, for the Founder to send.",
+			"mcp_tools": [
+				"cpo_feedback_list",
+				"cpo_feedback_triage"
+			],
+			"pairs_with": [
+				"topy-cpo-feedback-triage",
+				"topy-cpo-feedback-capture"
+			],
+			"path": "plugins/topy-ai-cpo-feedback/skills/topy-cpo-feedback-reply/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-feedback-triage",
+			"name": "Triage feedback",
+			"category": "feedback",
+			"category_name": "Feedback",
+			"plugin": "topy-ai-cpo-feedback",
+			"tier": "connected",
+			"summary": "Decide each new item — accept, reject, duplicate or needs info — size it small, medium or large, and route it: small and safe to the AI CTO, larger or sensitive ones to a PRD and the Founder.",
+			"mcp_tools": [
+				"cpo_feedback_list",
+				"cpo_feedback_triage",
+				"cpo_spec"
+			],
+			"pairs_with": [
+				"topy-cpo-feedback-capture",
+				"topy-cpo-feedback-reply",
+				"topy-cpo-prd",
+				"topy-cpo-build-or-not"
+			],
+			"path": "plugins/topy-ai-cpo-feedback/skills/topy-cpo-feedback-triage/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-pmf-survey",
+			"name": "PMF survey",
+			"category": "discovery",
+			"category_name": "Discovery & positioning",
+			"plugin": "topy-ai-cpo-discovery",
+			"tier": "connected",
+			"summary": "Run the product/market-fit survey properly — the 'very disappointed' question to the right users, 40% as the signal — and read who the product is a must-have for.",
+			"mcp_tools": [
+				"cpo_pmf_plan",
+				"cpo_review",
+				"cpo_decision_log"
+			],
+			"pairs_with": [
+				"topy-cpo-goals",
+				"topy-cpo-user-research",
+				"topy-cpo-positioning"
+			],
+			"path": "plugins/topy-ai-cpo-discovery/skills/topy-cpo-pmf-survey/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-positioning",
+			"name": "Positioning and competitor teardown",
+			"category": "discovery",
+			"category_name": "Discovery & positioning",
+			"plugin": "topy-ai-cpo-discovery",
+			"tier": "connected",
+			"summary": "Write the positioning — for whom, what job, which category, what benefit, unlike which alternative — from a sourced teardown of the real alternatives.",
+			"mcp_tools": [
+				"cpo_positioning"
+			],
+			"pairs_with": [
+				"topy-cpo-pmf-survey",
+				"topy-cpo-user-research",
+				"topy-cpo-roadmap"
+			],
+			"path": "plugins/topy-ai-cpo-discovery/skills/topy-cpo-positioning/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-user-research",
+			"name": "User research",
+			"category": "discovery",
+			"category_name": "Discovery & positioning",
+			"plugin": "topy-ai-cpo-discovery",
+			"tier": "connected",
+			"summary": "Plan and run a small round of user interviews about past behaviour, then turn the notes into de-identified insights and recorded feedback.",
+			"mcp_tools": [
+				"cpo_feedback_add",
+				"cpo_feedback_list"
+			],
+			"pairs_with": [
+				"topy-cpo-pmf-survey",
+				"topy-cpo-feedback-capture",
+				"topy-cpo-prioritize"
+			],
+			"path": "plugins/topy-ai-cpo-discovery/skills/topy-cpo-user-research/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-build-or-not",
+			"name": "Build or not",
+			"category": "planning",
+			"category_name": "Planning & specs",
+			"plugin": "topy-ai-cpo-planning",
+			"tier": "connected",
+			"summary": "Before the AI CTO writes code: reuse what exists, compose a routine for a one-off, or build — privately or as a reusable app — with the reason recorded.",
+			"mcp_tools": [
+				"cpo_build_check"
+			],
+			"pairs_with": [
+				"topy-cpo-prd",
+				"topy-cpo-prioritize"
+			],
+			"path": "plugins/topy-ai-cpo-planning/skills/topy-cpo-build-or-not/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-prd",
+			"name": "Write a PRD",
+			"category": "planning",
+			"category_name": "Planning & specs",
+			"plugin": "topy-ai-cpo-planning",
+			"tier": "connected",
+			"summary": "Write a one-page PRD — problem, evidence, goals, non-goals, success metric and how it is measured, risks, rollout, open questions — that the AI CTO can build from.",
+			"mcp_tools": [
+				"cpo_spec",
+				"cpo_feedback_list",
+				"cpo_build_check"
+			],
+			"pairs_with": [
+				"topy-cpo-build-or-not",
+				"topy-cpo-experiment-plan",
+				"topy-cpo-launch-safely",
+				"topy-cpo-roadmap"
+			],
+			"path": "plugins/topy-ai-cpo-planning/skills/topy-cpo-prd/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-prioritize",
+			"name": "RICE prioritisation",
+			"category": "planning",
+			"category_name": "Planning & specs",
+			"plugin": "topy-ai-cpo-planning",
+			"tier": "connected",
+			"summary": "Rank candidate features by RICE — reach × impact × confidence ÷ effort — with the scales written down, so the order is explainable and the decision stays a person's.",
+			"mcp_tools": [
+				"cpo_prioritize",
+				"cpo_feedback_list",
+				"cpo_review"
+			],
+			"pairs_with": [
+				"topy-cpo-roadmap",
+				"topy-cpo-feedback-triage",
+				"topy-cpo-build-or-not"
+			],
+			"path": "plugins/topy-ai-cpo-planning/skills/topy-cpo-prioritize/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-roadmap",
+			"name": "Roadmap: now, next, later",
+			"category": "planning",
+			"category_name": "Planning & specs",
+			"plugin": "topy-ai-cpo-planning",
+			"tier": "connected",
+			"summary": "Keep one roadmap in three stages — now (committed), next (shaped), later (ideas) — ordered by value and effort, tied to goals, with no fake dates.",
+			"mcp_tools": [
+				"cpo_roadmap",
+				"cpo_prioritize"
+			],
+			"pairs_with": [
+				"topy-cpo-prioritize",
+				"topy-cpo-prd",
+				"topy-cpo-goals"
+			],
+			"path": "plugins/topy-ai-cpo-planning/skills/topy-cpo-roadmap/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-experiment-plan",
+			"name": "Plan and start an experiment",
+			"category": "experiments",
+			"category_name": "Experiments & launches",
+			"plugin": "topy-ai-cpo-experiments",
+			"tier": "connected",
+			"summary": "Pre-register an A/B test — hypothesis, one primary metric, minimum detectable effect, sample size, duration and stop rule — then start it.",
+			"mcp_tools": [
+				"cpo_experiment_size",
+				"cpo_experiment_start",
+				"cpo_experiments",
+				"cpo_review"
+			],
+			"pairs_with": [
+				"topy-cpo-experiment-read",
+				"topy-cpo-launch-safely",
+				"topy-cpo-prd"
+			],
+			"path": "plugins/topy-ai-cpo-experiments/skills/topy-cpo-experiment-plan/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-experiment-read",
+			"name": "Read an experiment honestly",
+			"category": "experiments",
+			"category_name": "Experiments & launches",
+			"plugin": "topy-ai-cpo-experiments",
+			"tier": "connected",
+			"summary": "Read a test against its pre-registered plan: keep running until the sample is reached, check the split, report the effect with its uncertainty and guardrails, and log the decision.",
+			"mcp_tools": [
+				"cpo_experiments",
+				"cpo_experiment_read",
+				"cpo_decision_log"
+			],
+			"pairs_with": [
+				"topy-cpo-experiment-plan",
+				"topy-cpo-decision-log",
+				"topy-cpo-launch-safely"
+			],
+			"path": "plugins/topy-ai-cpo-experiments/skills/topy-cpo-experiment-read/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-launch-safely",
+			"name": "Instrument and ship behind a flag",
+			"category": "experiments",
+			"category_name": "Experiments & launches",
+			"plugin": "topy-ai-cpo-experiments",
+			"tier": "standalone",
+			"summary": "Before launch: define and verify the events the success metric needs, ship behind a feature flag to a small share first, watch guardrails, and keep a one-switch rollback.",
+			"mcp_tools": [],
+			"pairs_with": [
+				"topy-cpo-prd",
+				"topy-cpo-experiment-plan",
+				"topy-cpo-experiment-read"
+			],
+			"path": "plugins/topy-ai-cpo-experiments/skills/topy-cpo-launch-safely/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-decision-log",
+			"name": "Log a decision",
+			"category": "decisions",
+			"category_name": "Decisions",
+			"plugin": "topy-ai-cpo-decisions",
+			"tier": "connected",
+			"summary": "Record a product decision with why, the evidence and a falsifier — what would change it — and a date to revisit, so decisions can be checked instead of re-argued.",
+			"mcp_tools": [
+				"cpo_decision_log",
+				"cpo_decisions"
+			],
+			"pairs_with": [
+				"topy-cpo-decision-revisit",
+				"topy-cpo-experiment-read"
+			],
+			"path": "plugins/topy-ai-cpo-decisions/skills/topy-cpo-decision-log/SKILL.md"
+		},
+		{
+			"id": "topy-cpo-decision-revisit",
+			"name": "Revisit decisions",
+			"category": "decisions",
+			"category_name": "Decisions",
+			"plugin": "topy-ai-cpo-decisions",
+			"tier": "connected",
+			"summary": "When a decision's revisit date comes, check its falsifier against what the tools now show, and keep it, change it or extend the date — with a new log entry.",
+			"mcp_tools": [
+				"cpo_decisions",
+				"cpo_decision_log",
+				"cpo_review",
+				"cpo_experiments",
+				"cpo_feedback_list"
+			],
+			"pairs_with": [
+				"topy-cpo-decision-log",
+				"topy-cpo-weekly-review"
+			],
+			"path": "plugins/topy-ai-cpo-decisions/skills/topy-cpo-decision-revisit/SKILL.md"
+		}
+	]
+}

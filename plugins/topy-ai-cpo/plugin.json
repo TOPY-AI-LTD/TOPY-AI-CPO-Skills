@@ -1,0 +1,38 @@
+{
+	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+	"name": "topy-ai-cpo",
+	"version": "0.1.0",
+	"description": "TOPY AI CPO core: connects the TOPY CPO MCP server and keeps what to build decided, measured and reviewed week by week — Connect the AI CPO, Daily product watch, The CPO's goals, Weekly product review.",
+	"author": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai",
+		"url": "https://topy.ai"
+	},
+	"homepage": "https://topy.ai/developers",
+	"repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-CPO-Skills",
+	"license": "MIT",
+	"keywords": [
+		"topy.ai",
+		"ai-cpo",
+		"product",
+		"core"
+	],
+	"extensions": {
+		"com.openai": {
+			"interface": {
+				"displayName": "TOPY.AI AI CPO",
+				"shortDescription": "TOPY AI CPO core: connects the TOPY CPO MCP server and keeps what to build decided, measured and reviewed week by week —",
+				"longDescription": "TOPY AI CPO core: connects the TOPY CPO MCP server and keeps what to build decided, measured and reviewed week by week — Connect the AI CPO, Daily product watch, The CPO's goals, Weekly product review.",
+				"capabilities": [
+					"Read",
+					"Write"
+				],
+				"category": "Productivity",
+				"brandColor": "#FF1212",
+				"privacyPolicyURL": "https://topy.ai/privacy",
+				"websiteURL": "https://topy.ai",
+				"developerName": "TOPY AI LTD"
+			}
+		}
+	}
+}

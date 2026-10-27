@@ -1,0 +1,61 @@
+{
+	"name": "@topy-ai/cpo-skills",
+	"version": "0.1.0",
+	"description": "Install the TOPY.AI AI CPO skills (weekly product review, feedback capture and triage, user research, PMF survey, positioning, RICE priorities, now/next/later roadmap, PRDs with a success metric, build-or-not before the CTO, pre-registered experiments read without peeking, decision log) into Claude Code, Codex, Pi, Cursor, Gemini CLI, OpenCode, Copilot and other coding agents, for one project or for your user. Also a Pi package.",
+	"type": "module",
+	"license": "MIT",
+	"homepage": "https://github.com/TOPY-AI-LTD/TOPY-AI-CPO-Skills",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/TOPY-AI-LTD/TOPY-AI-CPO-Skills.git",
+		"directory": "packages/skills"
+	},
+	"bugs": "https://github.com/TOPY-AI-LTD/TOPY-AI-CPO-Skills/issues",
+	"keywords": [
+		"topy.ai",
+		"ai-cpo",
+		"founders",
+		"product",
+		"product-management",
+		"roadmap",
+		"prd",
+		"feedback",
+		"experiments",
+		"ab-testing",
+		"skills",
+		"agent-skills",
+		"claude-code",
+		"codex",
+		"pi-package",
+		"pi",
+		"cursor",
+		"gemini-cli",
+		"opencode",
+		"mcp"
+	],
+	"bin": {
+		"cpo-skills": "bin/cpo-skills.mjs"
+	},
+	"pi": {
+		"skills": [
+			"./skills"
+		]
+	},
+	"files": [
+		"bin",
+		"skills",
+		"catalog.json",
+		"README.md",
+		"LICENSE"
+	],
+	"engines": {
+		"node": ">=18"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"prepack": "node scripts/bundle.mjs",
+		"test": "node scripts/bundle.mjs && node --test scripts/cli.test.mjs"
+	}
+}

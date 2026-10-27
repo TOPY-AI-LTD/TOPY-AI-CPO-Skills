@@ -1,0 +1,20 @@
+{
+	"name": "topy-ai-cpo-discovery",
+	"version": "0.1.0",
+	"description": "TOPY AI CPO Discovery & positioning skills (3): PMF survey, Positioning and competitor teardown, User research. Add the topy-ai-cpo plugin too, for the core skills and the CPO MCP server.",
+	"author": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai",
+		"url": "https://topy.ai"
+	},
+	"homepage": "https://topy.ai/developers",
+	"repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-CPO-Skills",
+	"license": "MIT",
+	"keywords": [
+		"topy.ai",
+		"ai-cpo",
+		"product",
+		"discovery"
+	],
+	"privacyPolicyUrl": "https://topy.ai/privacy"
+}

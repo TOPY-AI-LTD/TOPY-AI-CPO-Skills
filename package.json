@@ -1,0 +1,19 @@
+{
+	"name": "topy-ai-cpo-skills",
+	"private": true,
+	"version": "0.1.0",
+	"description": "AI CPO skills for founders, built for TOPY.AI: a chief product officer that decides what to build and proves it worked — feedback triaged with clear accept/reject rules, de-identified user research, a PMF survey, RICE priorities, a now/next/later roadmap, PRDs with a success metric, a build-or-not check before the AI CTO, pre-registered experiments read without peeking, and a decision log with falsifiers — on the TOPY CPO MCP server (https://topy.ai/mcp/cpo); standalone skills are product methods that work anywhere.",
+	"license": "MIT",
+	"repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-CPO-Skills",
+	"keywords": [
+		"pi-package",
+		"agent-skills",
+		"ai-cpo",
+		"topy.ai"
+	],
+	"pi": {
+		"skills": [
+			"./plugins/*/skills"
+		]
+	}
+}
